@@ -1,0 +1,120 @@
+import java.util.Scanner;
+public class Main {
+
+    static int sum(int a, int b){
+        int result = a+b;
+        System.out.println("Toplam: "+result);
+        return result;
+    }
+    static int minus(int a, int b){
+        int result = a-b;
+        System.out.println("Sonuc: "+result);
+        return result;
+    }
+
+    static int multi(int a,int b){
+        int result = a*b;
+        System.out.println("Sonuc: "+result);
+        return result;
+
+    }
+    static int divide(int a, int b){
+        if(b == 0){
+            System.out.println("İkinci Sayıyı Sıfırdan Farklı Giriniz...");
+            return 0;
+        }
+        int result = a/b;
+        System.out.println("Sonuc: "+ result);
+        return result;
+
+    }
+    static int power(int a, int b){
+        int result =1;
+        for(int i=1;i<=b;i++){
+            result *= a;
+        }
+        System.out.println("Sonuc: "+result);
+        return result;
+    }
+    static int mod(int a,int b){
+        return a%b;
+    }
+    static void calculate(int a, int b){
+        System.out.println("Dikdortgenin Cevresi: "+(2*(a+b)));
+        System.out.println("Dikdortgenin Alani: "+(a*b));
+    }
+
+
+
+
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int select,a,b;
+
+        String menu =  "1- Toplama Islemi\n"
+                +"2- Cikarma Islemi\n"
+                +"3- Carpma Islemi\n"
+                +"4- Bolme Islemi\n"
+                +"5- UslU Sayi Hesaplama\n"
+                +"6- Mod Alma Islemi\n"
+                +"7- DikdOrtgen Cevre ve Alan Hesabi\n"
+                +"0- Cikis Yap\n";
+        System.out.println(menu);
+        while (true){
+
+            System.out.println("Lutfen Bir Islem Seciniz: ");
+            select = input.nextInt();
+
+            if(select == 0){
+                System.out.println("Gule Gule");
+                break;
+            }
+            /*if(select > 7 ){
+                System.out.println("Gecersiz Bir Aralik Girdiniz.");
+                break;
+
+
+            }*/
+            System.out.print("Lutfen Ilk Sayiyi Giriniz: ");
+            a = input.nextInt();
+            System.out.print("Lutfen Ikinci Sayiyi Giriniz: ");
+            b = input.nextInt();
+
+            switch (select){
+                case 1:
+                    sum(a,b);
+                    break;
+                case 2:
+                    minus(a,b);
+                    break;
+                case 3:
+                    multi(a,b);
+                    break;
+                case 4:
+                    divide(a,b);
+                    break;
+                case 5:
+                    power(a,b);
+                    break;
+                case 6:
+                    mod(a,b);
+                    break;
+                case 7:
+                    calculate(a,b);
+                    break;
+
+                default:
+                    System.out.println("Gecersiz Bir Giris Yaptiniz");
+
+                    
+            }
+
+        }
+
+
+
+    }
+
+    }
+
+
